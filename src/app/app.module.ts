@@ -11,19 +11,32 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AuthGuard } from './auth.guard'
 
 import {TokenInterceptorService} from './services/token-interceptor.service'
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component'
+
+import { CommonModule } from '@angular/common'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+import { ToastrModule } from 'ngx-toastr'
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    DevolucionesComponent
+    DevolucionesComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 20000,
+      progressBar: true
+    })
   ],
   providers: [
     AuthGuard,

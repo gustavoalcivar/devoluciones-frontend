@@ -1,5 +1,30 @@
+<ng-container *ngIf="!principal()">
+    <button class="btn btn-danger" (click)="regresar()">REGRESAR</button>
+</ng-container>
+<h2 class="text-center"><strong>{{ titulo }}</strong></h2>
+<div class="alert alert-danger" *ngIf="error">
+    <p>{{ error }}</p>
+</div>
+<div *ngIf="isLoading" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let devolucion of devoluciones">
-        {{devolucion.local}}
+    <div class="row">
+        <div class="col-sm-6 col-6">
+            <p class="text-center"><strong>{{cabecera}}</strong></p>
+        </div>
+        <div class="col-sm-6 col-6">
+            <p class="text-center"><strong>DEVOLUCIONES</strong></p>
+        </div>
+    </div>
+    <li class="list-group-item" *ngFor="let dato of datos">
+        <div class="row">
+            <div class="col-sm-6 col-6">
+                <p class="text-center" style="cursor: pointer;" (click)="consultar($event)">{{dato.etiqueta}}</p>
+            </div>
+            <div class="col-sm-6 col-6">
+                <p class="text-center">{{dato.dato}}</p>
+            </div>
+        </div>
     </li>
 </ul>

@@ -5,12 +5,21 @@
                 Registrarse
             </div>
             <div class="card-body">
-                <form (submit)="register()">
+                <div class="alert alert-danger" *ngIf="error">
+                    <p>{{ error }}</p>
+                </div>
+                <div *ngIf="isLoading" style="text-align: center;">
+                    <app-loading-spinner></app-loading-spinner>
+                </div>
+                <form (submit)="register()" *ngIf="!isLoading">
                     <div class="form-group">
                         <input type="text" [(ngModel)]="user.user" name="user" class="form-control" placeholder="Usuario" required autofocus>
                     </div>
                     <div class="form-group">
                         <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Contraseña" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="user.confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirme la contraseña" required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
                 </form>
