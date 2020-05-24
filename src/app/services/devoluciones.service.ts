@@ -24,5 +24,13 @@ export class DevolucionesService {
   getDevolucionesPorLocal(anio: number, mes: number, dia: number) {
     return this.http.get<any>(`${environment.URL}/devolucion?tipo=porlocal&anio=${anio}&mes=${mes}&dia=${dia}`)
   }
+
+  getDevolucionesPorLocalEnElMes(anio: number, mes: number) {
+    return this.http.get<any>(`${environment.URL}/devolucion?tipo=porlocalenelmes&anio=${anio}&mes=${mes}`)
+  }
+
+  getDevolucionesDeUnLocalEnElMes(local: string, anio: number, mes: number) {
+    return this.http.get<any>(`${environment.URL}/devolucion?tipo=deunlocalenelmes&anio=${anio}&mes=${mes}&local=${local}`)
+  }
   
 }
