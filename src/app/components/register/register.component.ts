@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
           this.isLoading = false
         },
         err => {
-          this.error = err.error.message
+          this.error = err.error.message || err.message
           this.isLoading = false
         }
       )
