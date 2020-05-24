@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.user.user = this.user.user.trim()
+    this.user.password = this.user.password.trim()
     if(this.user.user === '' || this.user.password === '') {
       this.error = 'Todos los campos son requeridos'
       return

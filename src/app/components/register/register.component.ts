@@ -28,6 +28,9 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    this.user.user = this.user.user.trim()
+    this.user.password = this.user.password.trim()
+    this.user.confirmPassword = this.user.confirmPassword.trim()
     if(this.user.user === '' || this.user.password === '' || this.user.confirmPassword === '') {
       this.error = 'Todos los campos son requeridos'
       return
