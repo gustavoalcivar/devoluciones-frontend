@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         res => {
           localStorage.setItem('token', res.data.token)
           this.router.navigate(['/devoluciones'])
-          this.toastr.info('Bienvenid@', this.user.user)
+          this.toastr.info('Bienvenid@', res.data.user)
           this.isLoading = false
         },
         err => {
