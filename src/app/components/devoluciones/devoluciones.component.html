@@ -1,11 +1,13 @@
-<ng-container *ngIf="!principal()">
-    <button class="btn btn-danger" (click)="regresar()">REGRESAR</button>
-</ng-container>
+<div style="padding: 10px;">
+    <ng-container *ngIf="!principal()">
+        <button class="btn btn-danger" (click)="regresar()">REGRESAR</button>
+    </ng-container>
+</div>
 <div *ngIf="isLoading" style="text-align: center;">
     <app-loading-spinner></app-loading-spinner>
 </div>
 <h2 class="text-center"><strong>{{ titulo }}</strong></h2>
-<div class="text-center">
+<div class="text-center" style="padding: 20px;">
     <ng-container *ngIf="mostrarToggleButton()">
         <button class="btn btn-warning" (click)="toggleButtonAction()">{{ toggleButton }}</button>
     </ng-container>

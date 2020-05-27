@@ -16,7 +16,8 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { CommonModule } from '@angular/common'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { ToastrModule } from 'ngx-toastr'
+import { ToastrModule } from 'ngx-toastr';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ToastrModule } from 'ngx-toastr'
     RegisterComponent,
     LoginComponent,
     DevolucionesComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    FileUploaderComponent
   ],
   imports: [
     BrowserModule,

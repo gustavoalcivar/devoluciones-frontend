@@ -1,0 +1,9 @@
+<div class="alert alert-danger" *ngIf="error">
+    <p>{{ error }}</p>
+</div>
+<div *ngIf="isLoading" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+<p>Seleccione los archivos que desea procesar</p>
+<input style="display: none;" type="file" (change)="onFileSelected($event)" multiple #fileInput>
+<button class="btn btn-success" (click)="fileInput.click()">Selecionar archivos</button>

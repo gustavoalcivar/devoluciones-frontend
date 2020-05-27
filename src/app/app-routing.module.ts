@@ -6,13 +6,15 @@ import {RegisterComponent} from './components/register/register.component'
 import {DevolucionesComponent} from './components/devoluciones/devoluciones.component'
 
 import {AuthGuard} from './auth.guard'
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component'
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/devoluciones', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'devoluciones', component: DevolucionesComponent, canActivate: [AuthGuard] }
+  { path: 'devoluciones', component: DevolucionesComponent, canActivate: [AuthGuard] },
+  { path: 'uploader', component: FileUploaderComponent, canActivate: [AuthGuard] }
 ]
 
 @NgModule({
